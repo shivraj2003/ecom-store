@@ -9,6 +9,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { ArrowUpDown, ChevronDown } from "lucide-react";
+import Image from "next/image";
 
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -59,7 +60,7 @@ export const columns = [
     },
     cell: ({ row }) => {
       console.log(row?.original?.image);
-      return <img src={row?.original?.image} className="w-20 h-20" />;
+      return <Image src={row?.original?.image} alt="" className="w-20 h-20" />;
     },
   },
   {

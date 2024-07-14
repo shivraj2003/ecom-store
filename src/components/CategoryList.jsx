@@ -8,6 +8,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Link from "next/link";
+import Image from "next/image";
 
 const CategoryList = ({ categories }) => {
   return (
@@ -24,7 +25,7 @@ const CategoryList = ({ categories }) => {
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
               <Link href={`/products?cat=${cat.id}`}>
                 <div className="border-2 bg-secondaryColor rounded-md h-40 flex justify-center items-center flex-col gap-2">
-                  <img src={cat?.image} className="w-20 h-20" alt="" />
+                  <Image src={cat?.image} className="w-20 h-20" alt="" />
                   <p>{cat.name}</p>
                 </div>
               </Link>

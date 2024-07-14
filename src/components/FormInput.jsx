@@ -4,6 +4,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { cn } from "@/lib/utils";
 
+
 const FormInput = forwardRef(
   (
     {
@@ -48,5 +49,7 @@ const FormInput = forwardRef(
     );
   }
 );
+
+FormInput.displayName = "FormInput";
 
 export default FormInput;

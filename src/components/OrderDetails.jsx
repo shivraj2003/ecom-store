@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 import ImageList from "./ImageList";
 
+
 const OrderDetails = ({ children, orderItems }) => {
   return (
     <Dialog>
@@ -21,12 +22,12 @@ const OrderDetails = ({ children, orderItems }) => {
         <DialogHeader>
           <DialogTitle>{children}</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
+            Make changes to your profile here. Click save when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
         {orderItems?.length
-          ? orderItems?.map((item) => (
-              <div className="grid grid-cols-[1fr_2fr]">
+        ? orderItems?.map((item) => (
+              <div key={item?.product?.id} className="grid grid-cols-[1fr_2fr]">
                 <ImageList images={item?.product?.images} />
                 <div className="p-2 flex flex-col justify-center">
                   <div className="flex justify-between items-center">

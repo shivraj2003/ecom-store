@@ -1,6 +1,7 @@
 import { staticTime } from "@/utils/data";
 import React from "react";
 import { Button } from "./ui/button";
+import Image from "next/image";
 
 const Enhancement = () => {
   return (
@@ -22,7 +23,7 @@ const Enhancement = () => {
         <Button className="bg-green-500 w-28">Buy Now</Button>
       </div>
       <div className="text-center">
-        <img src="/speaker.png" alt="" />
+        <Image src="/speaker.png" alt="" />
       </div>
     </div>
   );

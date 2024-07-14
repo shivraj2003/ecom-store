@@ -3,6 +3,7 @@ import AddAddress from "@/components/AddAddress";
 import { setCart } from "@/redux/slice/cartSlice";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Image from "next/image";
 
 const Addtocart = () => {
   const { cart } = useSelector((state) => state.auth);
@@ -58,7 +59,7 @@ const Addtocart = () => {
             >
               <div className="flex w-2/5">
                 <div className="w-20">
-                  <img
+                  <Image
                     className="h-24"
                     src={item?.product?.images?.[0]}
                     alt=""

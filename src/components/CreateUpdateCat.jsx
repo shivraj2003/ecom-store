@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import Image from "next/image";
 import { useForm } from "react-hook-form";
 import FormInput from "./FormInput";
 import { UploadButton } from "@/lib/uploadthing";
@@ -21,7 +22,7 @@ const CreateUpdateCat = ({ children, category }) => {
 
   useEffect(() => {
     if (category?.image) setImage(category?.image);
-  }, []);
+  }, [category]);
 
   const handleSubmit = async (formData) => {
     console.log("data");
@@ -41,7 +42,7 @@ const CreateUpdateCat = ({ children, category }) => {
         <DialogHeader>
           <DialogTitle>{children}</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
+            Make changes to your profile here. Click save when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
         <form action={handleSubmit}>
@@ -71,7 +72,7 @@ const CreateUpdateCat = ({ children, category }) => {
               />
             ) : (
               <div className="flex items-center gap-2">
-                <img src={image} className="h-16 w-16" alt="" />
+                <Image src={image} className="h-16 w-16" alt="" />
               </div>
             )}
           </div>

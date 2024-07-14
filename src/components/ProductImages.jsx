@@ -1,5 +1,6 @@
 "use client";
 import React, { useState } from "react";
+import Image from "next/image";
 
 const ProductImages = ({ images }) => {
   const [image, setImage] = useState(images[0]);
@@ -12,7 +13,7 @@ const ProductImages = ({ images }) => {
             onClick={() => setImage(img)}
             className="border hover:border-gray-900 rounded-lg overflow-hidden transition-colors"
           >
-            <img
+            <Image
               src={img}
               height={120}
               className="aspect-square object-cover rounded-lg"
@@ -23,7 +24,7 @@ const ProductImages = ({ images }) => {
         ))}
       </div>
       <div className="md:col-span-4">
-        <img
+        <Image
           src={image}
           className="aspect-square object-cover border border-gray-200 w-full rounded-lg overflow-hidden"
           alt=""

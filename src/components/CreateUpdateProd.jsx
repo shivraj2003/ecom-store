@@ -9,6 +9,7 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import Image from "next/image";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useForm } from "react-hook-form";
@@ -29,7 +30,7 @@ const CreateUpdateProd = ({ children, product }) => {
   useEffect(() => {
     if (product?.images) setImages(product.images);
     categories();
-  }, []);
+  }, [ product]);
   const categories = async () => {
     const res = await getCategories();
     setCat(res.result);
@@ -56,7 +57,7 @@ const CreateUpdateProd = ({ children, product }) => {
         <DialogHeader>
           <DialogTitle>{children}</DialogTitle>
           <DialogDescription>
-            Make changes to your profile here. Click save when you're done.
+            Make changes to your profile here. Click save when you&apos;re done.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
@@ -112,7 +113,7 @@ const CreateUpdateProd = ({ children, product }) => {
                 <div className="flex items-center gap-2">
                   {images?.map((img, index) => (
                     <div key={index}>
-                      <img src={img?.url || img} className="h-16 w-16" alt="" />
+                      <Image src={img?.url || img} className="h-16 w-16" alt="" />
                     </div>
                   ))}
                 </div>

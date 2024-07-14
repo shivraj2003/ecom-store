@@ -5,6 +5,7 @@ import { toast } from "@/components/ui/use-toast";
 import { UploadButton } from "@/lib/uploadthing";
 import { register } from "@/utils/actions";
 import React, { useState } from "react";
+import Image from "next/image";
 
 const Signup = () => {
   const [image, setImage] = useState("");
@@ -28,7 +29,7 @@ const Signup = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <div className="h-screen bg-[#cbe3e9]">
-        <img src="./signup.png" alt="" />
+        <Image src="./signup.png" alt="" />
       </div>
       <div className="p-[15%] bg-white">
         <h1 className="text-2xl font-medium">Create an account</h1>

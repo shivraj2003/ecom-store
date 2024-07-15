@@ -13,7 +13,7 @@ import Image from "next/image";
 const CategoryList = ({ categories }) => {
   return (
     <div>
-      <Title title="Categoriess" heading="Browse By Category" />
+      <Title title="Categories" heading="Browse By Category" />
       <Carousel
         opts={{
           align: "start",
@@ -24,8 +24,14 @@ const CategoryList = ({ categories }) => {
           {categories?.map((cat, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
               <Link href={`/products?cat=${cat.id}`}>
-                <div className="border-2 bg-secondaryColor rounded-md h-40 flex justify-center items-center flex-col gap-2">
-                  <Image src={cat?.image} className="w-20 h-20" alt="" />
+                <div className="border-2 bg-secondaryColor rounded-md h-40 flex justify-center items-center flex-col gap-2 p-2">
+                  <Image 
+                    src={cat?.image} 
+                   height={13}
+                   width={130}
+                    alt={cat?.name} 
+                    
+                  />
                   <p>{cat.name}</p>
                 </div>
               </Link>
@@ -40,3 +46,4 @@ const CategoryList = ({ categories }) => {
 };
 
 export default CategoryList;
+

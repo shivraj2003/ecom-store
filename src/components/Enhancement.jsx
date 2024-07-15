@@ -23,7 +23,7 @@ const Enhancement = () => {
         <Button className="bg-green-500 w-28">Buy Now</Button>
       </div>
       <div className="text-center">
-        <Image src="/speaker.png" alt="" />
+        <Image src="/speaker.png" width={640} height={440} alt="" />
       </div>
     </div>
   );

@@ -19,8 +19,14 @@ const ImageList = ({ images }) => {
       <CarouselContent>
         {images?.map((image, index) => (
           <CarouselItem key={index}>
-            <div>
-              <Image src={image} className="w-40 h-40 object-contain" alt="" />
+            <div className="relative w-40 h-40">
+              <Image 
+                src={image}  
+                alt={`Image ${index}`} 
+                width={640} 
+                height={480}
+                className="object-contain" 
+              />
               <div></div>
             </div>
           </CarouselItem>
@@ -33,3 +39,4 @@ const ImageList = ({ images }) => {
 };
 
 export default ImageList;
+

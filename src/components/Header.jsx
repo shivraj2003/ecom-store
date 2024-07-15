@@ -33,7 +33,7 @@ const Header = ({ categories, session }) => {
       <Navbar />
       <div className="flex justify-between items-center h-20 px-[10%]">
         <Link href="/">
-          <Image src="/logo.png" className="h-12 cursor-pointer" alt="" />
+          <Image src="/logo.png" className="cursor-pointer bg-blend-lighten" alt="" width={80} height={80} />
         </Link>
         <div className="text-md flex items-center gap-5">
           <Link href="/" className="hidden sm:block">

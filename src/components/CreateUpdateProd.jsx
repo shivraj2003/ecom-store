@@ -113,7 +113,7 @@ const CreateUpdateProd = ({ children, product }) => {
                 <div className="flex items-center gap-2">
                   {images?.map((img, index) => (
                     <div key={index}>
-                      <Image src={img?.url || img} className="h-16 w-16" alt="" />
+                      <Image src={img?.url || img} width={16} height={16} className="h-16 w-16" alt="" />
                     </div>
                   ))}
                 </div>

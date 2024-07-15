@@ -1,8 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ["https://i.gifer.com"],
-    },
+        domains: ['loremflickr.com', 'i.gifer.com'],
+      },
 };
 
 export default nextConfig;

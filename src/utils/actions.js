@@ -75,7 +75,7 @@ export const emailVerify = async (getToken) => {
         token: getToken,
       },
     });
-    console.log(getUser);
+   
     if (getUser) {
       const user = await prisma?.user?.update({
         where: { id: getUser.id },

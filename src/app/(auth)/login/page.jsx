@@ -18,7 +18,10 @@ const Login = () => {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
       <div className="h-screen bg-[#cbe3e9]">
-        <Image src="./signup.png" alt="" />
+        <Image src="/signup.png" 
+       width={1920} 
+       height={1080} 
+          alt="" />
        
       </div>
       <div className="p-[15%] bg-white">

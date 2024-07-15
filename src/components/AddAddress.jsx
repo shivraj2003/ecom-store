@@ -19,9 +19,10 @@ const AddAddress = () => {
   const router = useRouter();
   const { cart } = useSelector((state) => state.auth);
   const submit = async (formData) => {
-    console.log(formData, "cart");
+ 
     const response = await createOrder(formData, cart);
     if (response.error) {
+      router.push('/login');
       toast({ title: response.error });
     } else {
       router.push(response.result);
@@ -33,7 +34,7 @@ const AddAddress = () => {
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Address</SheetTitle>
-          <SheetDescription>
+          <SheetDescription >
             <form action={submit}>
               <FormInput
                 id="address"
@@ -75,9 +76,12 @@ const AddAddress = () => {
                 label="Phone number"
                 placeholder="Enter Phone number"
                 type="number"
-                className="h-10"
+                className="h-10 mb-4"
+
+                
+                
               />
-              <FormSubmit className="w-full bg-red-500 text-white h-12 hover:bg-red-400">
+              <FormSubmit className="w-full  bg-red-500  text-white h-12 hover:bg-red-400">
                 Create
               </FormSubmit>
             </form>

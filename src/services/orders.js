@@ -2,12 +2,19 @@
 
 import { getSession } from "@/utils/actions";
 import prisma from "@/utils/connection";
+
+
+
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 export const createOrder = async (formData, cart) => {
+  
   const session = await getSession();
   if (!session.isLoggedIn) {
-    return { error: "User not found" };
+    
+    return { error: "User not found Please login" };
+    
+ 
   }
 
   const address = formData.get("address");
@@ -64,7 +71,7 @@ export const createOrder = async (formData, cart) => {
       success_url: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/success/${order.id}`,
       cancel_url: `${process.env.NEXT_PUBLIC_FRONTEND_URL}/cancel`,
     });
-    console.log(stripeSession, "stripeSession");
+    
 
     return { result: stripeSession.url };
   } catch (error) {

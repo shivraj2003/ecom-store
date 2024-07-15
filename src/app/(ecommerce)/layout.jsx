@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { getSession } from "@/utils/actions";
 import prisma from "@/utils/connection";
 import React from "react";
+import Footer from "@/components/Footer";
 
 const EcommerceLayout = async ({ children }) => {
   const categories = await prisma.Category.findMany();
@@ -28,29 +29,10 @@ const EcommerceLayout = async ({ children }) => {
       <Toaster />
       <Header categories={plainCategories} session={plainSession} />
       {children}
+      <Footer/>
     </div>
   );
 };
 
 export default EcommerceLayout;
 
-
-// import Header from "@/components/Header";
-// import { Toaster } from "@/components/ui/toaster";
-// import { getSession } from "@/utils/actions";
-// import prisma from "@/utils/connection";
-// import React from "react";
-
-// const EcommerceLayout = async ({ children }) => {
-//   const categories = await prisma.Category.findMany();
-//   const session = await getSession();
-//   return (
-//     <div>
-//       <Toaster />
-//       <Header categories={categories} session={session} />
-//       {children}
-//     </div>
-//   );
-// };
-
-// export default EcommerceLayout;

@@ -6,6 +6,7 @@ import { UploadButton } from "@/lib/uploadthing";
 import { register } from "@/utils/actions";
 import React, { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Signup = () => {
   const [image, setImage] = useState("");
@@ -28,8 +29,14 @@ const Signup = () => {
 
   return (
     <div className="grid grid-cols-1 lg:grid-cols-2">
-      <div className="h-screen bg-[#cbe3e9]">
-        <Image src="./signup.png" alt="" />
+      <div className="h-screen   bg-[#cbe3e9] ">
+    <Image src="/signup.png"
+        
+        width={1080}
+        height={1920}
+         
+         alt=""
+        />
       </div>
       <div className="p-[15%] bg-white">
         <h1 className="text-2xl font-medium">Create an account</h1>
@@ -75,6 +82,9 @@ const Signup = () => {
           <FormSubmit type="submit" className="w-full bg-red-500 text-white h-12 hover:bg-red-400 mt-10">
             Create
           </FormSubmit>
+          <Link href="/login">
+            <div className="text-red-500 text-sm justify-center py-5  ">Already have an account? LOGIN</div>
+          </Link>
         </form>
       </div>
     </div>

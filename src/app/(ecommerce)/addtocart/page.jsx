@@ -132,7 +132,7 @@ const Addtocart = () => {
               <span>Total Cost</span>
               <span>${totalPrice() + 10}</span>
             </div>
-            <div className="bg-indigo-500 font-semibold hover:bg-indigo-600 text-sm text-white uppercase w-full p-2 rounded-md">
+            <div className="bg-indigo-500 font-semibold hover:bg-indigo-600 text-sm text-center  text-white uppercase w-full p-2 rounded-md">
               <AddAddress />
             </div>
           </div>

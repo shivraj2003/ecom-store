@@ -16,6 +16,7 @@ import {
 } from "@/components/ui/navigation-menu";
 import { components } from "@/utils/data";
 import { Input } from "./ui/input";
+import { LogIn } from 'lucide-react';
 
 import {
   Popover,
@@ -52,7 +53,8 @@ const Header = ({ categories, session }) => {
                           title={component.name}
                           href={`/products?cat=${component.id}`}
                           image={component.image}
-                        >
+                          className="h-8 w-8"
+                           >
                           {component.description}
                         </ListItem>
                       ))}
@@ -74,7 +76,7 @@ const Header = ({ categories, session }) => {
           {session?.isLoggedIn ? (
             <Popover>
               <PopoverTrigger asChild>
-                <Avatar>
+                <Avatar className="cursor-pointer">
                   <AvatarImage
                     src={session?.user?.image}
                     alt={session?.user?.name}
@@ -108,8 +110,17 @@ const Header = ({ categories, session }) => {
               </PopoverContent>
             </Popover>
           ) : null}
+
+  
+          {session?.isLoggedIn ? null : (
+            <Link href="/login">
+              
+              <LogIn size={20} />
+            </Link>
+          )}
+
           <div>
-            <GanttChart size={20} />
+            <GanttChart size={20}  />
           </div>
         </div>
       </div>
@@ -133,7 +144,15 @@ const ListItem = forwardRef(
             {...props}
           >
             <div className="text-sm font-medium leading-none flex items-center gap-4">
-              <Image src={image} alt="" className="h-8 w-8" />
+              <Image 
+                src={image} 
+                alt={title} 
+                layout="responsive"
+                width={100}
+                height={100}
+                 // Set your desired height
+                
+              />
               <h2>{title}</h2>
             </div>
             <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
@@ -146,3 +165,5 @@ const ListItem = forwardRef(
   }
 );
 ListItem.displayName = "ListItem";
+
+

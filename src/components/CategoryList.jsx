@@ -24,11 +24,12 @@ const CategoryList = ({ categories }) => {
           {categories?.map((cat, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/4">
               <Link href={`/products?cat=${cat.id}`}>
-                <div className="border-2 bg-secondaryColor rounded-md h-40 flex justify-center items-center flex-col gap-2 p-2">
+                <div className="border-2 bg-secondaryColor rounded-md h-40 w-40 flex justify-center items-center flex-col gap-2 p-2">
                   <Image 
-                    src={cat?.image} 
-                   height={13}
+                     src={cat?.image || '/arrival_3.png'}
+                   height={130}
                    width={130}
+                    
                     alt={cat?.name} 
                     
                   />

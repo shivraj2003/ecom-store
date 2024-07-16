@@ -30,7 +30,9 @@ const AddAddress = () => {
   };
   return (
     <Sheet>
-      <SheetTrigger>Checkout</SheetTrigger>
+      <SheetTrigger>BUY NOW
+     
+       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
           <SheetTitle>Address</SheetTitle>
@@ -87,7 +89,7 @@ const AddAddress = () => {
             </form>
           </SheetDescription>
         </SheetHeader>
-      </SheetContent>
+      </SheetContent> 
     </Sheet>
   );
 };
